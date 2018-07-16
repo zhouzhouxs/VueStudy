@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<script src="js/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="(item,index) in list" :key="index">
+				<a :href="item.url">{{item.title}}</a>
+			</li>
+		</ul>
+	</div>
+	<script>
+		var app = new new Vue({
+			el: '#app',
+			data: {
+				list: [{
+						title: 'vue-for',
+						url: 'page/vue_for.html'
+					},
+					{
+						title: 'Component--组件',
+						url: 'page/component.html'
+					},
+					{
+						title: '处理用户输入--绑定事件',
+						url: 'page/vue_on.html'
+					},
+					{
+						title: '双向绑定',
+						url: 'page/vue_model.html'
+					},
+				]
+			}
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue事件绑定</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <blockquote>
+            双向绑定命令：v-model="msg";
+        </blockquote>
+        {{message}}
+        <br>
+        <br>
+        <input type="text" v-model="message">
+        <button type="button" @click="reverseMessage">反转用户的输入</button>
+    </div>
+    <script>
+        var app = new new Vue({
+            el: "#app",
+            data: {
+                message: '',
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
